@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+  
+  pre_build:
+    commands:
+      - echo "Starting build phase..."
+      - java -version
+  
+  build:
+    commands:
+      - echo "Compiling Java program..."
+      - javac SortingDemo.java
+      
+  post_build:
+    commands:
+      - echo "Running the program..."
+      - java SortingDemo
+
+artifacts:
+  files:
+    - SortingDemo.class
+    - SortingDemo.java

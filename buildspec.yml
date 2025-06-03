@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+
+  pre_build:
+    commands:
+      - aws configure set default.region us-east-2
+      - echo "Starting build phase..."
+      - java -version
+
+  build:
+    commands:
+      - echo "Compiling Java program..."
+      - javac SortingDemo.java
+
+  post_build:
+    commands:
+      - echo "Running the program..."
+      - java SortingDemo
+
+artifacts:
+  files:
+    - SortingDemo.class
+    - SortingDemo.java
+
+container:
+  image: aws/codebuild/amazonlinux2-x86_64-standard:4.0

@@ -1,4 +1,9 @@
 version: 0.2
+
+env:
+  variables:
+    CODEBUILD_CONFIG_SANDBOX_JUPYTER_SERVER: "true"
+
 phases:
   install:
     runtime-versions:

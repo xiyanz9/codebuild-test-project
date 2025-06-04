@@ -5,12 +5,6 @@ phases:
     runtime-versions:
       java: corretto11
 
-  pre_build:
-    commands:
-      - aws configure set default.region us-east-2
-      - echo "Starting build phase..."
-      - java -version
-
   build:
     commands:
       - echo "Compiling Java program..."

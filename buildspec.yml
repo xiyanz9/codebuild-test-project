@@ -1,9 +1,14 @@
-version: 0.2
+version: 0.2Add commentMore actions
 
 phases:
   install:
     runtime-versions:
       java: corretto11
+
+  pre_build:
+    commands:
+      - echo "Starting build phase..."
+      - java -version
 
   build:
     commands:
@@ -19,6 +24,3 @@ artifacts:
   files:
     - SortingDemo.class
     - SortingDemo.java
-
-container:
-  image: aws/codebuild/amazonlinux2-x86_64-standard:4.0

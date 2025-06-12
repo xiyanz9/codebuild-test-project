@@ -11,8 +11,6 @@ phases:
 
   pre_build:
     commands:
-      - echo "Waiting 120 seconds for Jupyter setup..."
-      - sleep 120
       - echo "Starting build phase..."
       - java -version
 

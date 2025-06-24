@@ -1,26 +1,10 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      java: corretto11
-
-  pre_build:
-    commands:
-      - echo "Starting build phase..."
-      - java -version
-
   build:
     commands:
-      - echo "Compiling Java program..."
-      - javac SimpleDemo.java
-
-  post_build:
-    commands:
-      - echo "Running the program..."
-      - java SimpleDemo
+      - echo "No build commands. This project is used for Jupyter sandbox demo."
 
 artifacts:
   files:
-    - SimpleDemo.class
-    - SimpleDemo.java
+    - demo_notebook.ipynb
